@@ -1,0 +1,59 @@
+:root {
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+    --primary: #38bdf8;
+    --high: #ef4444;
+    --medium: #f59e0b;
+    --low: #10b981;
+}
+
+body { 
+    background-color: var(--bg); 
+    color: var(--text); 
+    font-family: 'Inter', sans-serif; 
+    margin: 0; padding: 20px;
+}
+
+.header { text-align: center; margin-bottom: 40px; }
+.pro-tag { font-size: 0.5em; background: var(--primary); padding: 2px 6px; border-radius: 4px; vertical-align: middle; }
+
+.board { display: flex; gap: 25px; justify-content: center; overflow-x: auto; }
+
+.column { 
+    background: rgba(30, 41, 59, 0.7); 
+    backdrop-filter: blur(10px);
+    width: 320px; border-radius: 12px; 
+    padding: 15px; min-height: 500px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.input-card { display: flex; gap: 5px; margin-bottom: 20px; }
+input, select, button { 
+    background: #334155; border: none; color: white; 
+    padding: 10px; border-radius: 6px; outline: none;
+}
+button { background: var(--primary); cursor: pointer; transition: 0.3s; }
+button:hover { opacity: 0.8; }
+
+.card { 
+    background: var(--card-bg); 
+    padding: 15px; border-radius: 8px; 
+    margin-bottom: 12px; 
+    cursor: grab;
+    border-left: 5px solid var(--medium);
+    position: relative;
+    transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-3px); }
+
+/* Cores das Prioridades */
+.card.high { border-left-color: var(--high); }
+.card.medium { border-left-color: var(--medium); }
+.card.low { border-left-color: var(--low); }
+
+.delete-btn {
+    position: absolute; right: 10px; top: 10px;
+    color: #64748b; cursor: pointer; font-size: 14px;
+}
+.delete-btn:hover { color: var(--high); }
